@@ -1,0 +1,49 @@
+{
+  "version": "0.3.0",
+  "tested_opencode": "2.2.5",
+  "read_limit_lines": 300,
+  "protected": [],
+  "read_deny": [
+    "*.env",
+    "graphify-out/graph.json",
+    "graphify-out/cache/*"
+  ],
+  "shell_allow": [],
+  "tests_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "python": [
+    "python"
+  ],
+  "models": {
+    "strong": "opencode/glm-5.3-flash-free",
+    "medium": "opencode/deepseek-v4.1-flash-free",
+    "light": "opencode/mimo-v2.6-flash-free",
+    "minimal": "opencode/mimo-v2.6-flash-free"
+  },
+  "gated_agents": [
+    "product",
+    "architect",
+    "implementer"
+  ],
+  "shell_confirm": [],
+  "confirm_edit": [],
+  "confirm_read": [],
+  "system_agents": {
+    "title": "light",
+    "summary": "light",
+    "compaction": "strong"
+  },
+  "tool_deny": [
+    "pencil_*"
+  ],
+  "claude_models": {
+    "strong": "opus",
+    "medium": "sonnet",
+    "light": "haiku",
+    "minimal": "haiku"
+  }
+}

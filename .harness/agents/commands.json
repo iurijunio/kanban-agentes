@@ -1,0 +1,42 @@
+{
+  "micro": {
+    "description": "Force the task size to micro",
+    "agent": "orchestrator",
+    "prompt": "Size: micro. No documents; hooks and tests are enough.\n\n$ARGUMENTS"
+  },
+  "simple": {
+    "description": "Force the task size to simples",
+    "agent": "orchestrator",
+    "prompt": "Size: simples. Plan of up to 3 lines in the answer, then verifier with check-delivery.\n\n$ARGUMENTS"
+  },
+  "impact": {
+    "description": "Force the task size to impacto",
+    "agent": "orchestrator",
+    "prompt": "Size: impacto. Spec and plan approved once by the user, then all checklists and reviewer.\n\n$ARGUMENTS"
+  },
+  "feature": {
+    "description": "Start something new from the PRD",
+    "agent": "orchestrator",
+    "prompt": "Size: novo. Start with the PRD through agent product, then follow impacto.\n\n$ARGUMENTS"
+  },
+  "approve": {
+    "description": "Approve the current plan and release its handoffs",
+    "agent": "orchestrator",
+    "prompt": "The user approved the current plan. Call plan_approve, then continue the plan."
+  },
+  "graph": {
+    "description": "Cheap search through the code graph",
+    "agent": "explorer",
+    "prompt": "$ARGUMENTS"
+  },
+  "lesson": {
+    "description": "Record a lesson",
+    "agent": "orchestrator",
+    "prompt": "Record this with lesson_add, choosing the area with area_of when a file is named:\n\n$ARGUMENTS"
+  },
+  "improve-harness": {
+    "description": "Review lessons and signals; propose changes for approval",
+    "agent": "orchestrator",
+    "prompt": "Load skill harness-curation and follow it."
+  }
+}
