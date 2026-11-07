@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/glm-5.3-flash-free",
+  "model": "9router/raciocinio",
   "default_agent": "orchestrator",
   "skills": [
     "./.harness/skills"
@@ -19,31 +19,31 @@
   },
   "agents": {
     "orchestrator": {
-      "model": "opencode/deepseek-v4.1-flash-free"
+      "model": "9router/raciocinio"
     },
     "product": {
-      "model": "opencode/glm-5.3-flash-free"
+      "model": "9router/raciocinio"
     },
     "architect": {
-      "model": "opencode/glm-5.3-flash-free"
+      "model": "9router/raciocinio"
     },
     "implementer": {
-      "model": "opencode/deepseek-v4.1-flash-free"
+      "model": "9router/Coder"
     },
     "executor": {
-      "model": "opencode/mimo-v2.6-flash-free"
+      "model": "9router/Coder"
     },
     "tester": {
-      "model": "opencode/deepseek-v4.1-flash-free"
+      "model": "9router/Coder"
     },
     "reviewer": {
-      "model": "opencode/glm-5.3-flash-free"
+      "model": "9router/Revisao"
     },
     "verifier": {
-      "model": "opencode/mimo-v2.6-flash-free"
+      "model": "9router/Varredura"
     },
     "explorer": {
-      "model": "opencode/mimo-v2.6-flash-free"
+      "model": "9router/Varredura"
     },
     "build": {
       "disabled": true
@@ -55,13 +55,124 @@
       "disabled": true
     },
     "title": {
-      "model": "opencode/mimo-v2.6-flash-free"
+      "model": "9router/Varredura"
     },
     "summary": {
-      "model": "opencode/mimo-v2.6-flash-free"
+      "model": "9router/Varredura"
     },
     "compaction": {
-      "model": "opencode/glm-5.3-flash-free"
+      "model": "9router/raciocinio"
+    }
+  },
+  "providers": {
+    "9router": {
+      "name": "9router",
+      "env": [
+        "NINEROUTER_API_KEY"
+      ],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://127.0.0.1:20128/v1"
+      },
+      "models": {
+        "raciocinio": {
+          "name": "raciocinio",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          }
+        },
+        "Revisao": {
+          "name": "Revisao",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 128000
+          }
+        },
+        "Coder": {
+          "name": "Coder",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 131072
+          }
+        },
+        "Varredura": {
+          "name": "Varredura",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 64000
+          }
+        },
+        "Visao": {
+          "name": "Visao",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 131072
+          }
+        },
+        "Reserva": {
+          "name": "Reserva",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          }
+        }
+      }
     }
   }
 }

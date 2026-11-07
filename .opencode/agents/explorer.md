@@ -10,6 +10,7 @@ permissions:
   - { action: "opencode_*_mcp_resource", resource: "*", effect: deny }
   - { action: "pencil_*", resource: "*", effect: deny }
   - { action: "skill", resource: "*", effect: deny }
+  - { action: "skill", resource: "caveman", effect: allow }
   - { action: "skill", resource: "graph-first", effect: allow }
   - { action: "read", resource: "*.env", effect: deny }
   - { action: "read", resource: "graphify-out/graph.json", effect: deny }

@@ -10,6 +10,7 @@ permissions:
   - { action: "opencode_*_mcp_resource", resource: "*", effect: deny }
   - { action: "pencil_*", resource: "*", effect: deny }
   - { action: "skill", resource: "*", effect: deny }
+  - { action: "skill", resource: "caveman", effect: allow }
   - { action: "skill", resource: "check-edit", effect: allow }
   - { action: "skill", resource: "check-tests", effect: allow }
   - { action: "skill", resource: "check-delivery", effect: allow }

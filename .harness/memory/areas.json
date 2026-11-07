@@ -1,1 +1,19 @@
-{}
+{
+  "code": {
+    "paths": [
+      "*.ts",
+      "*.tsx",
+      "*.js",
+      "*.jsx",
+      "*.mjs",
+      "*.py",
+      "*.css",
+      "*.scss",
+      "*.html",
+      "*.vue",
+      "*.svelte"
+    ],
+    "skill": "code-style",
+    "inject": true
+  }
+}
